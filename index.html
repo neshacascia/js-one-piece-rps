@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Battle Selector</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>One Piece Battle Selector</h1>
+
+        <div class="game-screen">
+            <div class="selector">
+                <div class="character-selector">
+                    <div class="character-box special">
+                        <img id="luffy" class="sprite-portrait luffy" src="assets/characters/luffy.png" alt="Luffy">
+                    </div>
+                    <div class="character-box">
+                        <img id="zoro" class="sprite-portrait zoro" src="assets/characters/zoro.png" alt="Zoro">
+                    </div>
+                    <div class="character-box">
+                        <img id="ace" class="sprite-portrait ace" src="assets/characters/ace.png" alt="Ace">
+                    </div>
+                    <div class="character-box">
+                        <img id="shanks" class="sprite-portrait shanks" src="assets/characters/shanks.png" alt="Shanks">
+                    </div>
+                </div>
+
+                <div class="bg-selector">
+                    <div class="toggle">
+                        <img id="bg-1" src="assets/backgrounds/bg-1.gif" alt="">
+                    </div>
+                    <span>Choose Location</span>
+                </div>
+            </div>
+
+            <div class="players">
+                <div class="player-sprite">
+                    <div class="player-1">
+                        <img class="hidden luffy-battle" src="assets/battle/luffy-battle.gif" alt="">
+                        <img class="hidden zoro-battle" src="assets/battle/zoro-battle.gif" alt="">
+                        <img class="hidden ace-battle" src="assets/battle/ace-battle.gif" alt="">
+                        <img class="hidden shanks-battle" src="assets/battle/shanks-battle.gif" alt="">
+                    </div>
+                    <div class="cpu">
+                        <img src="assets/battle/big-mom-battle.gif" alt="">
+                    </div>
+                </div>
+                
+                <div class="players-text">
+                    <h3>Player 1</h3>
+                    <h2>VS</h2>
+                    <h3>CPU</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="creator">
+            <span><a href="">neshacascia</a></span>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
