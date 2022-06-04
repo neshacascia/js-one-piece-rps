@@ -48,10 +48,13 @@ h1 {
 /* Selector */
 .selector {
     background: rgba(0, 0, 0, 0.325);
-    width: 50%;
+    width: 49%;
     border: 1px solid #fff;
     border-radius: 8px;
     margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .character-selector {
@@ -67,6 +70,11 @@ h1 {
     width: 114px;
 }
 
+.character-box:hover {
+    cursor: pointer;
+    border: 4px dotted rgb(36, 83, 223);
+}
+
 .character-box img {
     display: block;
     width: 100%;
@@ -78,42 +86,37 @@ img.luffy {
     height: 72px;
     position: relative;
     left: 15px;
-    top: 18px;
+    top: 20px;
 }
 
-/* Background Selector */
-.bg-selector {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0 10px 0;
-}
-
-.bg-selector img {
-    width: 50%;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.bg-selector span {
+.selector span {
     color: #fff;
     font-family: var(--game);
-    font-size: 14px;
+    font-size: 12px;
 }
+
+.opponent-selector {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+#big-mom {
+    width: 80px;
+    position: relative;
+    top: 15px;
+}
+
 /* Fighters */
 .players {
     width: 100%;
     height: 70%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .player-sprite {
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
 }
@@ -122,58 +125,86 @@ img.luffy {
     display: none;
 }
 
-.cpu img {
-    width: 500px;
-    position: fixed;
-    right: 350px;
-    bottom: 140px;
-}
-
 .luffy-battle {
-    width: 620px;
+    width: 100%;
     position: relative;
-    left: 160px;
-    bottom: 18px;
+    left: 200px;
+    top: 44px;
 }
 
 .zoro-battle {
-    width: 500px;
+    width: 90%;
     position: relative;
-    left: 130px;
-    top: 20px;
+    left: 250px;
+    top: 81px;
 }
 
 .ace-battle {
-    width: 210px;
+    width: 40%;
     position: relative;
-    left: 240px;
-    bottom: 40px;
+    left: 250px;
+    top: 54px;
 }
 
 .shanks-battle {
-    width: 370px;
+    width: 70%;
     position: relative;
-    left: 140px;
-    bottom: 45px;
+    left: 160px;
+    top: 8px;
+}
+
+.opponent-sprite {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.big-mom-battle {
+    width: 500px;
+    position: relative;
+    right: 110px;
+    bottom: 18px;
+}
+
+.kaido-battle {
+    width: 300px;
+    position: relative;
+    left: 100px;
+    top: 14px;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+}
+
+.bounce {
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+}
+
+@keyframes bounce-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .players-text {
     color: #fff;
     font-family: var(--game);
+    width: 65%;
     display: flex;
     justify-content: space-around;
-    position: fixed;
-    width: 50%;
-    height: 35px;
+    margin-bottom: 18px
 }
 
 .versus {
     margin-right: 50px;
 }
 
-.cpu {
-    margin-right: 30px;
-}
 /* Credits */
 .creator {
     text-align: center;
