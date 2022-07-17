@@ -142,8 +142,8 @@ span {
 .rps-selector button {
   border: 2px solid #fff;
   border-radius: 8px;
-  padding: 16px;
-  margin-top: 4px;
+  padding: 20px;
+  margin: 4px 5px 0 5px;
 }
 
 .rps-selector button:hover {
@@ -210,7 +210,7 @@ span {
   width: 300px;
   position: relative;
   left: 65px;
-  top: 4px;
+  bottom: 10px;
   animation-duration: 300ms;
   animation-iteration-count: infinite;
 }
@@ -235,10 +235,12 @@ span {
 .players-text {
   color: #fff;
   font-family: var(--game);
-  width: 65%;
+  width: 45%;
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
+  position: fixed;
+  bottom: 11%;
 }
 
 .versus {
