@@ -144,6 +144,7 @@ span {
   border-radius: 8px;
   padding: 20px;
   margin: 4px 5px 0 5px;
+  font-size: 1.5rem;
 }
 
 .rps-selector button:hover {
@@ -176,7 +177,7 @@ span {
   width: 100%;
   position: relative;
   left: 160px;
-  top: 35px;
+  top: 30px;
 }
 
 .zoro-battle {
@@ -197,7 +198,7 @@ span {
   width: 70%;
   position: relative;
   left: 135px;
-  top: 4px;
+  bottom: 5px;
 }
 
 .opponent-sprite {
