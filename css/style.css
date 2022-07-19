@@ -142,9 +142,9 @@ span {
 .rps-selector button {
   border: 2px solid #fff;
   border-radius: 8px;
-  padding: 20px;
+  padding: 18px;
   margin: 4px 5px 0 5px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .rps-selector button:hover {
