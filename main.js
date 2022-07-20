@@ -65,7 +65,7 @@ const resultDisplay = document.querySelector('#result-display');
 const userScoreDisplay = document.querySelector('#user-score');
 const computerScoreDisplay = document.querySelector('#computer-score');
 
-const possibleChoices = document.querySelectorAll('button');
+const possibleChoices = document.querySelectorAll('.rps-button');
 let userChoice;
 let computerChoice;
 let userScore = 0;
@@ -133,22 +133,32 @@ function displayResult() {
     userScore++;
     userScoreDisplay.innerHTML = userScore;
   }
-  resultDisplay.style.color = 'aqua';
+  resultDisplay.style.color = 'aquamarine';
 }
 
 function matchOver() {
+  const winnerMessage = document.querySelector('#defeat-message');
   if (userScore === 5) {
-    resultDisplay.innerHTML = 'you have defeated kaido!';
-    resetGame();
+    winnerMessage.innerHTML = 'you defeated kaido!';
+    displayMessage();
   } else if (computerScore === 5) {
-    resultDisplay.innerHTML = 'kaido has defeated you!';
-    resetGame();
+    winnerMessage.innerHTML = 'kaido defeated you!';
+    displayMessage();
   }
 }
 
-function resetGame() {
-  userScore = 0;
-  computerScore = 0;
-  userScoreDisplay.innerHTML = userScore;
-  computerScoreDisplay.innerHTML = computerScore;
+function displayMessage() {
+  const popUpMessage = document.querySelector('.pop-up');
+  popUpMessage.classList.remove('hidden');
+
+  const playAgainButton = document.querySelector('#play-again');
+  playAgainButton.addEventListener('click', resetGame);
+
+  function resetGame() {
+    userScore = 0;
+    computerScore = 0;
+    userScoreDisplay.innerHTML = userScore;
+    computerScoreDisplay.innerHTML = computerScore;
+    popUpMessage.classList.add('hidden');
+  }
 }

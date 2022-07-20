@@ -258,3 +258,44 @@ span {
   text-decoration: none;
   font-family: var(--game);
 }
+
+/* Pop Up Window */
+.pop-up {
+  background: rgba(0, 0, 0, 0.909);
+  border: 4px solid rgb(12, 122, 185);
+  border-radius: 8px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 25%;
+  height: 25%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pop-up .text {
+  font-family: var(--game);
+}
+
+#defeat-message {
+  color: aquamarine;
+  font-size: 0.93rem;
+}
+
+.pop-up button {
+  background: rgb(82, 111, 111);
+  padding: 12px 24px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.hidden.pop-up {
+  display: none;
+}
