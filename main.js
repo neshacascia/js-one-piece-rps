@@ -159,6 +159,8 @@ function displayMessage() {
     computerScore = 0;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
+    resultDisplay.innerHTML = 'choose your attack:';
+    resultDisplay.style.color = '#fff';
     popUpMessage.classList.add('hidden');
   }
 }
