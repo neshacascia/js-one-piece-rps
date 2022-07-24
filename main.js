@@ -108,31 +108,24 @@ function generateComputerChoice() {
 function displayResult() {
   if (userChoice === computerChoice) {
     resultDisplay.innerHTML = 'its a tie!';
-  } else if (userChoice === 'rock' && computerChoice === 'paper') {
+  } else if (
+    (userChoice === 'rock' && computerChoice === 'paper') ||
+    (userChoice === 'paper' && computerChoice === 'scissors') ||
+    (userChoice === 'scissors' && computerChoice === 'rock')
+  ) {
     resultDisplay.innerHTML = 'you lose!';
     computerScore++;
-    computerScoreDisplay.innerHTML = computerScore;
-  } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+  } else if (
+    (userChoice === 'rock' && computerChoice === 'scissors') ||
+    (userChoice === 'paper' && computerChoice === 'rock') ||
+    (userChoice === 'scissors' && computerChoice === 'paper')
+  ) {
     resultDisplay.innerHTML = 'you win!';
     userScore++;
-    userScoreDisplay.innerHTML = userScore;
-  } else if (userChoice === 'paper' && computerChoice === 'rock') {
-    resultDisplay.innerHTML = 'you win!';
-    userScore++;
-    userScoreDisplay.innerHTML = userScore;
-  } else if (userChoice === 'paper' && computerChoice === 'scissors') {
-    resultDisplay.innerHTML = 'you lose!';
-    computerScore++;
-    computerScoreDisplay.innerHTML = computerScore;
-  } else if (userChoice === 'scissors' && computerChoice === 'rock') {
-    resultDisplay.innerHTML = 'you lose!';
-    computerScore++;
-    computerScoreDisplay.innerHTML = computerScore;
-  } else if (userChoice === 'scissors' && computerChoice === 'paper') {
-    resultDisplay.innerHTML = 'you win!';
-    userScore++;
-    userScoreDisplay.innerHTML = userScore;
   }
+
+  computerScoreDisplay.innerHTML = computerScore;
+  userScoreDisplay.innerHTML = userScore;
   resultDisplay.style.color = 'aquamarine';
 }
 
