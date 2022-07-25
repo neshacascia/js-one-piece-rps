@@ -1,4 +1,4 @@
-// //NEW VERSION:
+// //REFACTORED VERSION:
 // const characters = document.querySelectorAll('.character-box');
 // const charactersBattle = document.querySelectorAll('.player-battle');
 
@@ -19,7 +19,7 @@
 //   });
 // }
 
-//OLD VERSION
+//CURRENT VERSION:
 document.querySelector('#luffy').addEventListener('click', luffyBattle);
 document.querySelector('#zoro').addEventListener('click', zoroBattle);
 document.querySelector('#ace').addEventListener('click', aceBattle);
@@ -76,11 +76,11 @@ possibleChoices.forEach(choice => {
     userChoice = e.target.id;
 
     if (userChoice === 'rock') {
-      userChoiceDisplay.innerHTML = '✊';
+      userChoiceDisplay.innerText = '✊';
     } else if (userChoice === 'paper') {
-      userChoiceDisplay.innerHTML = '✋';
+      userChoiceDisplay.innerText = '✋';
     } else if (userChoice === 'scissors') {
-      userChoiceDisplay.innerHTML = '✌️';
+      userChoiceDisplay.innerText = '✌️';
     }
 
     generateComputerChoice();
@@ -94,26 +94,26 @@ function generateComputerChoice() {
 
   if (randomNumber === 0) {
     computerChoice = 'scissors';
-    computerChoiceDisplay.innerHTML = '✌️';
+    computerChoiceDisplay.innerText = '✌️';
   } else if (randomNumber === 1) {
     computerChoice = 'rock';
-    computerChoiceDisplay.innerHTML = '✊';
+    computerChoiceDisplay.innerText = '✊';
   } else if (randomNumber === 2) {
     computerChoice = 'paper';
-    computerChoiceDisplay.innerHTML = '✋';
+    computerChoiceDisplay.innerText = '✋';
   }
   console.log(computerChoice);
 }
 
 function displayResult() {
   if (userChoice === computerChoice) {
-    resultDisplay.innerHTML = 'its a tie!';
+    resultDisplay.innerText = 'its a tie!';
   } else if (
     (userChoice === 'rock' && computerChoice === 'paper') ||
     (userChoice === 'paper' && computerChoice === 'scissors') ||
     (userChoice === 'scissors' && computerChoice === 'rock')
   ) {
-    resultDisplay.innerHTML = 'you lose!';
+    resultDisplay.innerText = 'you lose!';
     computerScore++;
   } else if (
     (userChoice === 'rock' && computerChoice === 'scissors') ||
@@ -132,10 +132,10 @@ function displayResult() {
 function matchOver() {
   const winnerMessage = document.querySelector('#defeat-message');
   if (userScore === 5) {
-    winnerMessage.innerHTML = 'you defeated kaido!';
+    winnerMessage.innerText = 'you defeated kaido!';
     displayMessage();
   } else if (computerScore === 5) {
-    winnerMessage.innerHTML = 'kaido defeated you!';
+    winnerMessage.innerText = 'kaido defeated you!';
     displayMessage();
   }
 }
@@ -152,7 +152,7 @@ function displayMessage() {
     computerScore = 0;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
-    resultDisplay.innerHTML = 'choose your attack:';
+    resultDisplay.innerText = 'choose your attack:';
     resultDisplay.style.color = '#fff';
     popUpMessage.classList.add('hidden');
   }
