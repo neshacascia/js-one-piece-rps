@@ -235,10 +235,12 @@ span {
 .players-text {
   color: #fff;
   font-family: var(--game);
-  width: 65%;
+  width: 45%;
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
+  position: fixed;
+  bottom: 11%;
 }
 
 .versus {
