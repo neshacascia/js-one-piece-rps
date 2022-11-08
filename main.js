@@ -1,51 +1,154 @@
-//NEW VERSION:
-const characters = document.querySelectorAll('.character-box');
-const charactersBattle = document.querySelectorAll('.player-battle');
+// //NEW VERSION:
+// const characters = document.querySelectorAll('.character-box');
+// const charactersBattle = document.querySelectorAll('.player-battle');
 
-characters.forEach((character) => {
-  character.addEventListener('click', switchFighters);
-});
+// characters.forEach(character => {
+//   character.addEventListener('click', switchFighters);
+// });
 
-function switchFighters(e) {
-  const characterPortrait = e.target;
-  console.log(characterPortrait);
+// function switchFighters(e) {
+//   removeActiveClasses();
+//   charactersBattle.forEach(battle => {
+//     battle.classList.add('active');
+//   });
+// }
+
+// function removeActiveClasses() {
+//   charactersBattle.forEach(battle => {
+//     battle.classList.remove('active');
+//   });
+// }
+
+//OLD VERSION
+document.querySelector('#luffy').addEventListener('click', luffyBattle);
+document.querySelector('#zoro').addEventListener('click', zoroBattle);
+document.querySelector('#ace').addEventListener('click', aceBattle);
+document.querySelector('#shanks').addEventListener('click', shanksBattle);
+
+const luffy = document.querySelector('.luffy-battle');
+const zoro = document.querySelector('.zoro-battle');
+const ace = document.querySelector('.ace-battle');
+const shanks = document.querySelector('.shanks-battle');
+
+function luffyBattle() {
+  luffy.classList.toggle('hidden');
+  zoro.classList.add('hidden');
+  ace.classList.add('hidden');
+  shanks.classList.add('hidden');
 }
 
-// //OLD VERSION
-// document.querySelector('#luffy').addEventListener('click', luffyBattle);
-// document.querySelector('#zoro').addEventListener('click', zoroBattle);
-// document.querySelector('#ace').addEventListener('click', aceBattle);
-// document.querySelector('#shanks').addEventListener('click', shanksBattle);
+function zoroBattle() {
+  zoro.classList.toggle('hidden');
+  luffy.classList.add('hidden');
+  ace.classList.add('hidden');
+  shanks.classList.add('hidden');
+}
 
-// const luffy = document.querySelector('.luffy-battle');
-// const zoro = document.querySelector('.zoro-battle');
-// const ace = document.querySelector('.ace-battle');
-// const shanks = document.querySelector('.shanks-battle');
+function aceBattle() {
+  ace.classList.toggle('hidden');
+  luffy.classList.add('hidden');
+  zoro.classList.add('hidden');
+  shanks.classList.add('hidden');
+}
 
-// function luffyBattle() {
-//   luffy.classList.toggle('hidden');
-//   zoro.classList.add('hidden');
-//   ace.classList.add('hidden');
-//   shanks.classList.add('hidden');
-// }
+function shanksBattle() {
+  shanks.classList.toggle('hidden');
+  luffy.classList.add('hidden');
+  zoro.classList.add('hidden');
+  ace.classList.add('hidden');
+}
 
-// function zoroBattle() {
-//   zoro.classList.toggle('hidden');
-//   luffy.classList.add('hidden');
-//   ace.classList.add('hidden');
-//   shanks.classList.add('hidden');
-// }
+//ROCK PAPER SCISSORS LOGIC:
+const userChoiceDisplay = document.querySelector('#user-choice');
+const computerChoiceDisplay = document.querySelector('#computer-choice');
+const resultDisplay = document.querySelector('#result-display');
+const userScoreDisplay = document.querySelector('#user-score');
+const computerScoreDisplay = document.querySelector('#computer-score');
 
-// function aceBattle() {
-//   ace.classList.toggle('hidden');
-//   luffy.classList.add('hidden');
-//   zoro.classList.add('hidden');
-//   shanks.classList.add('hidden');
-// }
+const possibleChoices = document.querySelectorAll('button');
+let userChoice;
+let computerChoice;
+let userScore = 0;
+let computerScore = 0;
 
-// function shanksBattle() {
-//   shanks.classList.toggle('hidden');
-//   luffy.classList.add('hidden');
-//   zoro.classList.add('hidden');
-//   ace.classList.add('hidden');
-// }
+possibleChoices.forEach(choice => {
+  choice.addEventListener('click', e => {
+    userChoice = e.target.id;
+
+    if (userChoice === 'rock') {
+      userChoiceDisplay.innerHTML = '✊';
+    } else if (userChoice === 'paper') {
+      userChoiceDisplay.innerHTML = '✋';
+    } else if (userChoice === 'scissors') {
+      userChoiceDisplay.innerHTML = '✌️';
+    }
+
+    generateComputerChoice();
+    displayResult();
+    matchOver();
+  });
+});
+
+function generateComputerChoice() {
+  let randomNumber = Math.floor(Math.random() * possibleChoices.length);
+
+  if (randomNumber === 0) {
+    computerChoice = 'scissors';
+    computerChoiceDisplay.innerHTML = '✌️';
+  } else if (randomNumber === 1) {
+    computerChoice = 'rock';
+    computerChoiceDisplay.innerHTML = '✊';
+  } else if (randomNumber === 2) {
+    computerChoice = 'paper';
+    computerChoiceDisplay.innerHTML = '✋';
+  }
+  console.log(computerChoice);
+}
+
+function displayResult() {
+  if (userChoice === computerChoice) {
+    resultDisplay.innerHTML = 'its a tie!';
+  } else if (userChoice === 'rock' && computerChoice === 'paper') {
+    resultDisplay.innerHTML = 'you lose!';
+    computerScore++;
+    computerScoreDisplay.innerHTML = computerScore;
+  } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+    resultDisplay.innerHTML = 'you win!';
+    userScore++;
+    userScoreDisplay.innerHTML = userScore;
+  } else if (userChoice === 'paper' && computerChoice === 'rock') {
+    resultDisplay.innerHTML = 'you win!';
+    userScore++;
+    userScoreDisplay.innerHTML = userScore;
+  } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+    resultDisplay.innerHTML = 'you lose!';
+    computerScore++;
+    computerScoreDisplay.innerHTML = computerScore;
+  } else if (userChoice === 'scissors' && computerChoice === 'rock') {
+    resultDisplay.innerHTML = 'you lose!';
+    computerScore++;
+    computerScoreDisplay.innerHTML = computerScore;
+  } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+    resultDisplay.innerHTML = 'you win!';
+    userScore++;
+    userScoreDisplay.innerHTML = userScore;
+  }
+  resultDisplay.style.color = 'aqua';
+}
+
+function matchOver() {
+  if (userScore === 5) {
+    resultDisplay.innerHTML = 'you have defeated kaido!';
+    resetGame();
+  } else if (computerScore === 5) {
+    resultDisplay.innerHTML = 'kaido has defeated you!';
+    resetGame();
+  }
+}
+
+function resetGame() {
+  userScore = 0;
+  computerScore = 0;
+  userScoreDisplay.innerHTML = userScore;
+  computerScoreDisplay.innerHTML = computerScore;
+}

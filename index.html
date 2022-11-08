@@ -10,43 +10,62 @@
   </head>
   <body>
     <div class="container">
-      <h1>One Piece Battle Selector</h1>
-
+      <h1>One Piece Rock Paper Scissors</h1>
       <div class="game-screen">
-        <div class="selector">
-          <div class="character-selector">
-            <div class="character-box special">
-              <img
-                id="luffy"
-                class="sprite-fighter luffy"
-                src="assets/characters/luffy.png"
-                alt="Luffy"
-              />
+        <div class="display-row">
+          <div class="display-column">
+            <div id="user-choice" class="display-choice"></div>
+            <div id="user-score" class="display-score"></div>
+          </div>
+
+          <div class="selector">
+            <div class="character-selector">
+              <div class="character-box special">
+                <img
+                  id="luffy"
+                  class="sprite-fighter luffy"
+                  src="assets/characters/luffy.png"
+                  alt="Luffy"
+                />
+              </div>
+              <div class="character-box">
+                <img
+                  id="zoro"
+                  class="sprite-fighter zoro"
+                  src="assets/characters/zoro.png"
+                  alt="Zoro"
+                />
+              </div>
+              <div class="character-box">
+                <img
+                  id="ace"
+                  class="sprite-fighter ace"
+                  src="assets/characters/ace.png"
+                  alt="Ace"
+                />
+              </div>
+              <div class="character-box">
+                <img
+                  id="shanks"
+                  class="sprite-fighter shanks"
+                  src="assets/characters/shanks.png"
+                  alt="Shanks"
+                />
+              </div>
             </div>
-            <div class="character-box">
-              <img
-                id="zoro"
-                class="sprite-fighter zoro"
-                src="assets/characters/zoro.png"
-                alt="Zoro"
-              />
+
+            <span id="result-display" class="result">choose your attack:</span>
+
+            <div class="rps-selector">
+              <button id="rock">✊</button>
+              <button id="paper">✋</button>
+              <button id="scissors">✌️</button>
             </div>
-            <div class="character-box">
-              <img
-                id="ace"
-                class="sprite-fighter ace"
-                src="assets/characters/ace.png"
-                alt="Ace"
-              />
-            </div>
-            <div class="character-box">
-              <img
-                id="shanks"
-                class="sprite-fighter shanks"
-                src="assets/characters/shanks.png"
-                alt="Shanks"
-              />
-            </div>
+          </div>
+
+          <div class="display-column right">
+            <div id="computer-choice" class="display-choice"></div>
+            <div id="computer-score" class="display-score"></div>
           </div>
         </div>
 
