@@ -1,9 +1,23 @@
 // //REFACTORED VERSION:
 // const characters = document.querySelectorAll('.character-box');
+// console.log(characters);
 // const charactersBattle = document.querySelectorAll('.player-battle');
 
 // characters.forEach(character => {
-//   character.addEventListener('click', switchFighters);
+//   character.addEventListener('click', e => {
+//     if (e.target.id === 'luffy') {
+//       charactersBattle[0].classList.toggle('hidden');
+//     } else if (e.target.id === 'zoro') {
+//       charactersBattle[1].classList.toggle('hidden');
+//     } else if (e.target.id === 'ace') {
+//       charactersBattle[2].classList.toggle('hidden');
+//     } else if (e.target.id === 'shanks') {
+//       charactersBattle[3].classList.toggle('hidden');
+//     }
+//   });
+//   for (let battle of charactersBattle) {
+//     battle.classList.add('hidden');
+//   }
 // });
 
 // function switchFighters(e) {
@@ -132,10 +146,10 @@ function displayResult() {
 function matchOver() {
   const winnerMessage = document.querySelector('#defeat-message');
   if (userScore === 5) {
-    winnerMessage.innerText = 'you defeated kaido!';
+    winnerMessage.innerText = 'you have defeated kaido!';
     displayMessage();
   } else if (computerScore === 5) {
-    winnerMessage.innerText = 'kaido defeated you!';
+    winnerMessage.innerText = 'kaido has defeated you!';
     displayMessage();
   }
 }
