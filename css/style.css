@@ -310,11 +310,15 @@ span {
   }
 
   .players {
-    margin-top: 170px;
+    margin-top: 160px;
+  }
+
+  .pop-up {
+    width: 70%;
   }
 
   .players-text {
-    margin-top: 60px;
+    display: none;
   }
 }
 
