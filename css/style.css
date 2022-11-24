@@ -157,6 +157,7 @@ span {
   height: 50%;
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .player-sprite {
@@ -310,7 +311,7 @@ span {
   }
 
   .players {
-    margin-top: 160px;
+    margin-top: 150px;
   }
 
   .pop-up {
@@ -328,6 +329,11 @@ span {
     background-position: 20%;
   }
 
+  h1 {
+    font-size: 2rem;
+    line-height: 150%;
+  }
+
   .display-row {
     padding: 0 20px;
   }
@@ -340,10 +346,6 @@ span {
   .character-selector {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .rps-selector button {
-    background: rgb(21, 21, 21);
   }
 
   .players {
@@ -375,7 +377,7 @@ span {
   }
 
   .pop-up {
-    width: 70%;
+    width: 90%;
   }
 
   .players-text {
