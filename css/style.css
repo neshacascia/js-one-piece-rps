@@ -157,7 +157,7 @@ span {
   height: 50%;
   display: flex;
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 15px;
 }
 
 .player-sprite {
