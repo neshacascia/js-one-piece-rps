@@ -338,6 +338,10 @@ span {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .rps-selector button {
+    background: rgb(21, 21, 21);
+  }
+
   .players {
     margin-right: 250px;
   }
@@ -352,7 +356,6 @@ span {
 
   .zoro-battle {
     margin-bottom: 95px;
-    width: 100%;
   }
 
   .ace-battle {
@@ -365,6 +368,10 @@ span {
 
   .kaido-battle {
     width: 100%;
+  }
+
+  .pop-up {
+    width: 70%;
   }
 
   .players-text {
