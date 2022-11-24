@@ -306,15 +306,15 @@ span {
   }
 
   .selector {
-    width: 70%;
+    width: 75%;
   }
 
   .players {
-    margin-top: 130px;
+    margin-top: 170px;
   }
 
   .players-text {
-    margin-top: 30px;
+    margin-top: 60px;
   }
 }
 
