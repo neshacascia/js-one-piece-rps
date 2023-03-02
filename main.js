@@ -1,76 +1,64 @@
 // //REFACTORED VERSION:
-// const characters = document.querySelectorAll('.character-box');
-// console.log(characters);
-// const charactersBattle = document.querySelectorAll('.player-battle');
+const playerSprites = Array.from(document.querySelectorAll('.sprite-fighter'));
 
-// characters.forEach(character => {
-//   character.addEventListener('click', e => {
-//     if (e.target.id === 'luffy') {
-//       charactersBattle[0].classList.toggle('hidden');
-//     } else if (e.target.id === 'zoro') {
-//       charactersBattle[1].classList.toggle('hidden');
-//     } else if (e.target.id === 'ace') {
-//       charactersBattle[2].classList.toggle('hidden');
-//     } else if (e.target.id === 'shanks') {
-//       charactersBattle[3].classList.toggle('hidden');
-//     }
-//   });
-//   for (let battle of charactersBattle) {
-//     battle.classList.add('hidden');
-//   }
-// });
+const playerSpritesBattle = Array.from(
+  document.querySelectorAll('.player-battle')
+);
 
-// function switchFighters(e) {
-//   removeActiveClasses();
-//   charactersBattle.forEach(battle => {
-//     battle.classList.add('active');
-//   });
+playerSprites.forEach(player => {
+  player.addEventListener('click', playerBattle);
+});
+
+function playerBattle(e) {
+  const currentPlayer = e.target.id;
+
+  playerSpritesBattle.forEach(player => {
+    if (player.className.includes(currentPlayer)) {
+      player.classList.toggle('hidden');
+    } else {
+      player.classList.add('hidden');
+    }
+  });
+}
+
+//PREVIOUS VERSION:
+// document.querySelector('#luffy').addEventListener('click', luffyBattle);
+// document.querySelector('#zoro').addEventListener('click', zoroBattle);
+// document.querySelector('#ace').addEventListener('click', aceBattle);
+// document.querySelector('#shanks').addEventListener('click', shanksBattle);
+
+// const luffy = document.querySelector('.luffy-battle');
+// const zoro = document.querySelector('.zoro-battle');
+// const ace = document.querySelector('.ace-battle');
+// const shanks = document.querySelector('.shanks-battle');
+
+// function luffyBattle() {
+//   luffy.classList.toggle('hidden');
+//   zoro.classList.add('hidden');
+//   ace.classList.add('hidden');
+//   shanks.classList.add('hidden');
 // }
 
-// function removeActiveClasses() {
-//   charactersBattle.forEach(battle => {
-//     battle.classList.remove('active');
-//   });
+// function zoroBattle() {
+//   zoro.classList.toggle('hidden');
+//   luffy.classList.add('hidden');
+//   ace.classList.add('hidden');
+//   shanks.classList.add('hidden');
 // }
 
-//CURRENT VERSION:
-document.querySelector('#luffy').addEventListener('click', luffyBattle);
-document.querySelector('#zoro').addEventListener('click', zoroBattle);
-document.querySelector('#ace').addEventListener('click', aceBattle);
-document.querySelector('#shanks').addEventListener('click', shanksBattle);
+// function aceBattle() {
+//   ace.classList.toggle('hidden');
+//   luffy.classList.add('hidden');
+//   zoro.classList.add('hidden');
+//   shanks.classList.add('hidden');
+// }
 
-const luffy = document.querySelector('.luffy-battle');
-const zoro = document.querySelector('.zoro-battle');
-const ace = document.querySelector('.ace-battle');
-const shanks = document.querySelector('.shanks-battle');
-
-function luffyBattle() {
-  luffy.classList.toggle('hidden');
-  zoro.classList.add('hidden');
-  ace.classList.add('hidden');
-  shanks.classList.add('hidden');
-}
-
-function zoroBattle() {
-  zoro.classList.toggle('hidden');
-  luffy.classList.add('hidden');
-  ace.classList.add('hidden');
-  shanks.classList.add('hidden');
-}
-
-function aceBattle() {
-  ace.classList.toggle('hidden');
-  luffy.classList.add('hidden');
-  zoro.classList.add('hidden');
-  shanks.classList.add('hidden');
-}
-
-function shanksBattle() {
-  shanks.classList.toggle('hidden');
-  luffy.classList.add('hidden');
-  zoro.classList.add('hidden');
-  ace.classList.add('hidden');
-}
+// function shanksBattle() {
+//   shanks.classList.toggle('hidden');
+//   luffy.classList.add('hidden');
+//   zoro.classList.add('hidden');
+//   ace.classList.add('hidden');
+// }
 
 //ROCK PAPER SCISSORS LOGIC:
 const userChoiceDisplay = document.querySelector('#user-choice');
